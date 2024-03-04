@@ -3,6 +3,7 @@ import { LandingPageComponent } from './shared/layouts/landing-page/landing-page
 import { LoginComponent } from './shared/layouts/login/login.component';
 import { LoginFormComponent } from './core/components/login/login-form/login-form.component';
 import { SignupFormComponent } from './core/components/login/signup-form/signup-form.component';
+import { UserDashboardComponent } from './shared/layouts/user-dashboard/user-dashboard.component';
 
 export const routes: Routes = [
   {
@@ -24,5 +25,10 @@ export const routes: Routes = [
         component: SignupFormComponent,
       },
     ],
+  },
+  {
+    path: 'user-dashboard',
+    component: UserDashboardComponent,
+    title: 'user-dashboard',
   },
 ];

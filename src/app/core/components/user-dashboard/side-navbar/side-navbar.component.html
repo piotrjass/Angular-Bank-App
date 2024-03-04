@@ -1,0 +1,20 @@
+<div class="h-screen w-[15rem] border-r-2 border-gray-100 flex flex-col">
+  <div class="w-full text-center p-5">
+    <p class="font-bold text-blue-700 text-xl mx-auto">bankify</p>
+  </div>
+  <div class="flex flex-col gap-5 w-full my-auto">
+    @for(item of items; track item.title){
+    <app-side-navbar-item
+      [title]="item.title"
+      [icon]="item.icon"
+      [link]="item.link"
+    ></app-side-navbar-item>
+    }
+  </div>
+  <div class="mt-auto mb-5">
+    <app-side-navbar-item
+      title="logout"
+      icon="tablerLogout2"
+    ></app-side-navbar-item>
+  </div>
+</div>
