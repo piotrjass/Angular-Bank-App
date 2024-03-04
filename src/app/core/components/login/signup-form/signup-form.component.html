@@ -1,0 +1,129 @@
+<div class="w-full h-screen flex items-center justify-center flex-col gap-3">
+  <p class="text-3xl font-semibold">Create new account</p>
+  <p class="italic">
+    Already have an account?
+    <button>
+      <span class="underline" routerLink="/login-form"> Log in</span>
+    </button>
+  </p>
+  <form
+    #f="ngForm"
+    (ngSubmit)="onSubmit(f)"
+    class="flex flex-col gap-5 w-fit h-[fit] items-center justify-center p-10 rounded-md z-10"
+  >
+    <label for="email" class="text-2xl font-semibold drop-shadow-md"
+      >Email</label
+    >
+    <input
+      class="bg-gray-100 text-xl p-3 rounded-xl"
+      type="email"
+      name="email"
+      placeholder="email"
+      #email="ngModel"
+      required
+      minlength="5"
+      maxlength="20"
+      ngModel
+      [ngClass]="{ '!bg-red-100': email.touched && email.invalid }"
+      pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+    />
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+      <div *ngIf="email.errors?.['required']">Email is required.</div>
+      <div
+        *ngIf="email.invalid && email.touched && !email.errors?.['required']"
+      >
+        Email is invalid.
+      </div>
+      <div *ngIf="email.errors?.['minlength']">
+        Email must be at least 5 characters long.
+      </div>
+    </div>
+    <label for="email" class="text-2xl font-semibold drop-shadow-md"
+      >Password</label
+    >
+    <input
+      class="bg-gray-100 text-xl p-3 rounded-xl"
+      placeholder="password"
+      type="password"
+      name="password"
+      ngModel
+      #password="ngModel"
+      required
+      minlength="5"
+      maxlength="20"
+      [ngClass]="{ '!bg-red-100': password.touched && password.invalid }"
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+    />
+    <div
+      *ngIf="password.invalid && (password.dirty || password.touched)"
+      class="alert"
+    >
+      <div *ngIf="password.errors?.['required']">Password is required.</div>
+      <div
+        *ngIf="
+          password.invalid &&
+          !password.errors?.['required'] &&
+          !password.errors?.['minlength'] &&
+          !password.errors?.['minlength']
+        "
+        class="max-w-60"
+      >
+        Must contain at least one number and one uppercase and lowercase letter,
+        and at least 8 or more characters.
+      </div>
+      <div *ngIf="password.errors?.['minlength']">
+        Password must be at least 5 characters long.
+      </div>
+    </div>
+    <label for="email" class="text-2xl font-semibold drop-shadow-md"
+      >Confirm Password</label
+    >
+    <input
+      class="bg-gray-100 text-xl p-3 rounded-xl"
+      placeholder="Confirm password"
+      type="confirmPassword"
+      name="confirmPassword"
+      ngModel
+      #confirmPassword="ngModel"
+      required
+      minlength="5"
+      maxlength="20"
+      [ngClass]="{
+        '!bg-red-100': confirmPassword.touched && confirmPassword.invalid
+      }"
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+    />
+    <div
+      *ngIf="
+        confirmPassword.invalid &&
+        (confirmPassword.dirty || confirmPassword.touched)
+      "
+      class="alert"
+    >
+      <div *ngIf="confirmPassword.errors?.['required']">
+        Password is required.
+      </div>
+      <div
+        *ngIf="
+          confirmPassword.invalid &&
+          !confirmPassword.errors?.['required'] &&
+          !confirmPassword.errors?.['minlength'] &&
+          !confirmPassword.errors?.['minlength']
+        "
+        class="max-w-60"
+      >
+        Must contain at least one number and one uppercase and lowercase letter,
+        and at least 8 or more characters.
+      </div>
+      <div *ngIf="confirmPassword.errors?.['minlength']">
+        Password must be at least 5 characters long.
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="px-10 text-xl py-3 rounded-md font-semibold border-2 border-blue-600 text-blue-600"
+    >
+      Create
+    </button>
+  </form>
+</div>
