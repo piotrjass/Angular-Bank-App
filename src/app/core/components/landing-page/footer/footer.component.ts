@@ -9,5 +9,10 @@ import { tablerBrandGithub } from '@ng-icons/tabler-icons';
   imports: [NgIconComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
+  viewProviders: [
+    provideIcons({
+      tablerBrandGithub,
+    }),
+  ],
 })
 export class FooterComponent {}
