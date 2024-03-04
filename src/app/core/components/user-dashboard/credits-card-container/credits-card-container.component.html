@@ -1,2 +1,10 @@
-<p>credits-card-container works!</p>
-<app-credit-card></app-credit-card>
+<div class="flex gap-5">
+  @for(card of cards; track card.color){
+  <app-credit-card
+    [color]="card.color"
+    [balance]="card.balance"
+    [last_digits]="card.last_digits"
+    [exp_date]="card.exp_date"
+  ></app-credit-card>
+  }
+</div>
