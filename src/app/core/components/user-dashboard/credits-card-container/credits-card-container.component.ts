@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CreditCardComponent } from '../credit-card/credit-card.component';
+import { CardsService } from '../../../../shared/services/cards.service';
 
 @Component({
   selector: 'app-credits-card-container',
@@ -9,18 +10,10 @@ import { CreditCardComponent } from '../credit-card/credit-card.component';
   styleUrl: './credits-card-container.component.css',
 })
 export class CreditsCardContainerComponent {
-  cards: any[] = [
-    {
-      color: 'bg-gradient-to-r from-cyan-200 to-blue-200',
-      balance: 720,
-      last_digits: '4334',
-      exp_date: '03/27',
-    },
-    {
-      color: 'bg-gradient-to-r from-green-200  to-teal-200',
-      balance: 440,
-      last_digits: '0681',
-      exp_date: '12/24',
-    },
-  ];
+  cards: any[] = [];
+  constructor(private cardsService: CardsService) {}
+
+  ngOnInit(): void {
+    this.cards = this.cardsService.getCards();
+  }
 }

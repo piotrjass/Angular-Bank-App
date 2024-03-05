@@ -1,10 +1,13 @@
-<div class="flex gap-5">
-  @for(card of cards; track card.color){
-  <app-credit-card
-    [color]="card.color"
-    [balance]="card.balance"
-    [last_digits]="card.last_digits"
-    [exp_date]="card.exp_date"
-  ></app-credit-card>
-  }
+<div class="flex gap-5 flex-col p-10">
+  <p class="text-3xl font-bold text-blue-700 drop-shadow-lg">My cards</p>
+  <div class="flex gap-10">
+    @for(card of cards; track card.color){
+    <app-credit-card
+      [color]="card.color"
+      [balance]="card.balance"
+      [last_digits]="card.last_digits"
+      [exp_date]="card.exp_date"
+    ></app-credit-card>
+    }
+  </div>
 </div>
