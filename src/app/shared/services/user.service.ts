@@ -6,7 +6,14 @@ import { Injectable } from '@angular/core';
 export class UserService {
   constructor() {}
   name: string = 'Jacob';
-  contacts: string[] = [];
+  contacts: any[] = [
+    {
+      name: 'Jacob',
+    },
+    {
+      name: 'Kate',
+    },
+  ];
   getName() {
     return this.name;
   }
