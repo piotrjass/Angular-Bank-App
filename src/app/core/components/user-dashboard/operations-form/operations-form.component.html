@@ -1,1 +1,32 @@
-<p>operations-form works!</p>
+<form
+  action=""
+  class="flex flex-col gap-10 w-[30rem] border-2 border-gray-300 shadow-lg p-10 rounded-md"
+>
+  <label for="" class="text-center font-bold text-xl">Select receiver</label>
+  <select name="" id="" class="p-3 rounded-lg">
+    <option value=""></option>
+  </select>
+
+  <label for="" class="text-center font-bold text-xl">Select card</label>
+
+  <select name="" id="" class="p-3 rounded-lg">
+    @for(card of cards; track card.last_digits) {
+    <option value="" class="flex flex-col justify-between font-semibold">
+      {{ card.balance }}$ **** **** **** {{ card.last_digits }}
+    </option>
+    }
+  </select>
+  <label for="" class="text-center font-bold text-xl">Choose an amount:</label>
+  <input
+    type="number"
+    name=""
+    id=""
+    placeholder="choose an amount"
+    class="p-3 rounded-xl font-bold text-center"
+  />
+  <button
+    class="px-5 py-3 rounded-xl border-2 border-black font-bold w-[50%] mx-auto"
+  >
+    Send
+  </button>
+</form>
