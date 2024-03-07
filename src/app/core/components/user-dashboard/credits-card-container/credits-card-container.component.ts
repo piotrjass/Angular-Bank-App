@@ -16,4 +16,8 @@ export class CreditsCardContainerComponent {
   ngOnInit(): void {
     this.cards = this.cardsService.getCards();
   }
+
+  test() {
+    this.cardsService.getCardsFromServer();
+  }
 }
