@@ -13,23 +13,9 @@ import { AuthService } from '../../../../shared/services/auth.service';
 })
 export class LoginFormComponent {
   constructor(private authService: AuthService) {}
-  login() {
-    this.authService.login();
-  }
+
   onSubmit(f: NgForm) {
     console.log(f.value);
-    console.log(f.valid);
+    this.authService.login(f.value);
   }
 }
-// export class CreditsCardContainerComponent {
-//   cards: any[] = [];
-//   constructor(private cardsService: CardsService) {}
-
-//   ngOnInit(): void {
-//     this.cards = this.cardsService.getCards();
-//   }
-
-//   test() {
-//     this.cardsService.getCardsFromServer();
-//   }
-// }
