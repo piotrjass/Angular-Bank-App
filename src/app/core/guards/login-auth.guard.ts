@@ -5,19 +5,13 @@ import { Injectable, inject } from '@angular/core';
 
 export const loginAuthGuard: CanActivateFn = async (route, state) => {
   let authService = inject(AuthService);
-
-  // try {
-  //   const isValid = await authService.verifyToken();
-  //   if (!isValid) {
-  //     return false;
-  //   }
-  //   console.log('go next!');
-  //   return true;
-  // } catch (error) {
-  //   console.error(error);
-  //   return false;
-  // }
-
-  console.log('works!');
+  try {
+    const isValid = await authService.verifyToken();
+    if (!isValid) {
+      return false;
+    }
+  } catch (error) {
+    console.error;
+  }
   return true;
 };

@@ -10,13 +10,17 @@ export class AuthService {
   url = 'http://localhost:8000/api/v1/login';
   token: string = '';
   isAuthenticated = signal(false);
-  count = signal<number>(0);
+  count = signal(1);
+  isAuth: boolean = false;
+  changeIsAuth() {
+    this.isAuth != this.isAuth;
+  }
   changeIsAAuthenticated() {
     this.isAuthenticated.set(false);
     console.log(this.isAuthenticated);
   }
   getIsAAuthenticated() {
-    return this.isAuthenticated;
+    return this.isAuthenticated();
   }
 
   async login(formObject: any) {
