@@ -7,6 +7,8 @@ import { UserDashboardComponent } from './shared/layouts/user-dashboard/user-das
 import { MainDashboardComponent } from './core/components/user-dashboard/main-dashboard/main-dashboard.component';
 import { OperationsComponent } from './core/components/user-dashboard/operations/operations.component';
 import { HistoryComponent } from './core/components/user-dashboard/history/history.component';
+import { loginAuthGuard } from './core/guards/login-auth.guard';
+import { ContactsComponent } from './core/components/user-dashboard/contacts/contacts.component';
 
 export const routes: Routes = [
   {
@@ -33,6 +35,7 @@ export const routes: Routes = [
     path: 'user-dashboard',
     component: UserDashboardComponent,
     title: 'user-dashboard',
+    canActivate: [loginAuthGuard],
     children: [
       {
         path: 'main',
@@ -48,6 +51,11 @@ export const routes: Routes = [
         path: 'history',
         component: HistoryComponent,
         title: 'history',
+      },
+      {
+        path: 'contacts',
+        component: ContactsComponent,
+        title: 'contacts',
       },
     ],
   },

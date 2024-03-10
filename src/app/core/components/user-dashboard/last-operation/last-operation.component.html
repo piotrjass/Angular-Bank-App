@@ -1,0 +1,14 @@
+<section class="p-10 rounded-lg shadow-lg border-4 border-gray-100">
+  <div class="flex flex-col gap-5">
+    <p class="text-3xl font-bold text-blue-600 drop-shadow-lg">
+      Last operation
+    </p>
+    <app-history-item
+      class="mx-auto"
+      [person]="historyItem.person"
+      [date]="historyItem.date"
+      [amount]="historyItem.amount"
+      [type]="historyItem.type"
+    ></app-history-item>
+  </div>
+</section>

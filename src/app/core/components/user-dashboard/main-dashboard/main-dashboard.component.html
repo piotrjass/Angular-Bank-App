@@ -1,2 +1,11 @@
-<p class="text-5xl text-blue font-semibold p-10">{{ balance }} $</p>
-<app-credits-card-container></app-credits-card-container>
+<div class="w-[80%] mx-auto flex flex-col gap-5">
+  <div class="flex items-center justify-center text-center gap-5">
+    <p class="text-xl text-gray-500 font-bold drop-shadow-lg w-fit">
+      total cards balance:
+    </p>
+    <p class="text-xl font-bold drop-shadow-lg w-fit">{{ balance }} $</p>
+  </div>
+
+  <app-credits-card-container></app-credits-card-container>
+  <app-last-operation></app-last-operation>
+</div>

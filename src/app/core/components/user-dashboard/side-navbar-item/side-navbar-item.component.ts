@@ -8,6 +8,7 @@ import {
   tablerWallet,
   tablerHistory,
   tablerLogout2,
+  tablerAddressBook,
 } from '@ng-icons/tabler-icons';
 import { RouterLink } from '@angular/router';
 
@@ -24,6 +25,7 @@ import { RouterLink } from '@angular/router';
       tablerWallet,
       tablerHistory,
       tablerLogout2,
+      tablerAddressBook,
     }),
   ],
 })

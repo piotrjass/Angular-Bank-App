@@ -26,5 +26,10 @@ export class SideNavbarComponent {
       icon: 'tablerHistory',
       link: 'history',
     },
+    {
+      title: 'Contacts',
+      icon: 'tablerAddressBook',
+      link: 'contacts',
+    },
   ];
 }
