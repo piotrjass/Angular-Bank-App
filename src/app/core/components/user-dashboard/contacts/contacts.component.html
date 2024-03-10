@@ -1,6 +1,13 @@
-<section class="p-10 flex flex-col gap-10">
-  <p class="font-bold text-5xl text-blue-700 drop-shadow-md">Contacts</p>
-  <div name="contacts containers">
-    <app-contact-item></app-contact-item>
+<section class="p-10 flex flex-col gap-10 d">
+  <p class="font-bold text-3xl text-blue-700 drop-shadow-md">Contacts</p>
+
+  <div name="contacts containers" class="mx-auto flex flex-col gap-5">
+    @for(contact of contacts; track contact.name){
+    <app-contact-item
+      [name]="contact.name"
+      [email]="contact.email"
+      [cards]="contact.cards"
+    ></app-contact-item>
+    }
   </div>
 </section>

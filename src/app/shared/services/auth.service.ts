@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
@@ -9,6 +9,15 @@ export class AuthService {
   constructor(private cookieService: CookieService) {}
   url = 'http://localhost:8000/api/v1/login';
   token: string = '';
+  isAuthenticated = signal(false);
+  count = signal<number>(0);
+  changeIsAAuthenticated() {
+    this.isAuthenticated.set(false);
+    console.log(this.isAuthenticated);
+  }
+  getIsAAuthenticated() {
+    return this.isAuthenticated;
+  }
 
   async login(formObject: any) {
     try {
@@ -21,13 +30,16 @@ export class AuthService {
     }
   }
 
-  async verifyToken() {
+  verifyToken = async () => {
     try {
-      const res = await axios.post(`${this.url}`, {
+      const res = await axios.get(`${this.url}`, {
         withCredentials: true,
       });
+      if (res.status !== 200) return;
+      return true;
     } catch (error) {
       console.error(error);
+      return false;
     }
-  }
+  };
 }
