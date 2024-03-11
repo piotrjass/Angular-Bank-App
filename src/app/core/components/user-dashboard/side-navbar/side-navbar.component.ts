@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { SideNavbarItemComponent } from '../side-navbar-item/side-navbar-item.component';
 import { RouterModule } from '@angular/router';
 import { tablerIcons } from '@ng-icons/tabler-icons';
 import { tablerMenu2 } from '@ng-icons/tabler-icons';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-navbar',
@@ -19,10 +20,26 @@ import { NgIconComponent, provideIcons } from '@ng-icons/core';
 })
 export class SideNavbarComponent {
   showOptions: boolean = true;
-
+  constructor(private router: Router) {}
   toggleOptions() {
     this.showOptions = !this.showOptions;
   }
+
+  logout() {
+    this.router.navigate(['/']);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkScreenWidth();
+  }
+
+  checkScreenWidth() {
+    if (window.innerWidth > 1024) {
+      this.showOptions = true;
+    }
+  }
+
   items: any[] = [
     {
       title: 'Main',

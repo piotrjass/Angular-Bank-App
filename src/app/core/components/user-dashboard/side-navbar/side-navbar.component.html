@@ -1,5 +1,5 @@
 <div
-  class="h-screen w-screen lg:w-[15rem] border-r-2 border-gray-100 flex flex-col"
+  class="lg:h-screen h-fit w-screen lg:w-[15rem] border-r-2 border-gray-100 flex flex-col"
 >
   <div class="w-full text-center p-5 flex items-center justify-center">
     <p class="font-bold text-blue-700 text-xl mx-auto">bankify</p>
@@ -28,6 +28,7 @@
       icon="tablerLogout2"
       link="undefined"
       routerLinkActiveOptions="{ exact: true }"
+      (click)="logout()"
     ></app-side-navbar-item>
   </div>
   }
