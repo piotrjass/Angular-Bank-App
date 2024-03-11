@@ -1,14 +1,20 @@
 import { Injectable, signal } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { HttpClient } from '@angular/common/http';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
-import { environment } from '../../../environments/environment';
+//
+import { environment } from '../../../environments/environment.development';
+
+//
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   constructor(private cookieService: CookieService) {}
-  url = 'http://localhost:8000/api/v1/login';
+
+  url = environment.apiUrl;
+
   token: string = '';
   isAuthenticated = signal(false);
   count = signal(1);
