@@ -35,7 +35,7 @@ export const routes: Routes = [
     path: 'user-dashboard',
     component: UserDashboardComponent,
     title: 'user-dashboard',
-    canActivate: [loginAuthGuard],
+    // canActivate: [loginAuthGuard],
     children: [
       {
         path: 'main',

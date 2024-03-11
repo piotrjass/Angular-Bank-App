@@ -17,7 +17,6 @@ export class AuthService {
   }
   changeIsAAuthenticated() {
     this.isAuthenticated.set(false);
-    console.log(this.isAuthenticated);
   }
   getIsAAuthenticated() {
     return this.isAuthenticated();
@@ -28,7 +27,6 @@ export class AuthService {
       const res = await axios.post(`${this.url}`, formObject, {
         withCredentials: true,
       });
-      console.log('http cookie set!');
     } catch (error) {
       console.error(error);
     }

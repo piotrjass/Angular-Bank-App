@@ -15,7 +15,6 @@ export class LoginFormComponent {
   constructor(private authService: AuthService) {}
 
   onSubmit(f: NgForm) {
-    console.log(f.value);
     this.authService.login(f.value);
   }
 }

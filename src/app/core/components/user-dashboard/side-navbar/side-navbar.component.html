@@ -1,8 +1,18 @@
-<div class="h-screen w-[15rem] border-r-2 border-gray-100 flex flex-col">
-  <div class="w-full text-center p-5">
+<div
+  class="h-screen w-screen lg:w-[15rem] border-r-2 border-gray-100 flex flex-col"
+>
+  <div class="w-full text-center p-5 flex items-center justify-center">
     <p class="font-bold text-blue-700 text-xl mx-auto">bankify</p>
+    <div class="lg:hidden flex">
+      <ng-icon
+        name="tablerMenu2"
+        class="text-3xl text-black mr-5 cursor-pointer"
+        (click)="toggleOptions()"
+      ></ng-icon>
+    </div>
   </div>
-  <div class="flex flex-col gap-5 w-full my-auto">
+  @if(showOptions){
+  <div class="flex flex-col gap-5 w-full lg:my-auto">
     @for(item of items; track item.title){
     <app-side-navbar-item
       [title]="item.title"
@@ -11,7 +21,8 @@
     ></app-side-navbar-item>
     }
   </div>
-  <div class="mt-auto mb-5">
+  } @if(showOptions){
+  <div class="lg:mt-auto mt-0">
     <app-side-navbar-item
       title="logout"
       icon="tablerLogout2"
@@ -19,4 +30,5 @@
       routerLinkActiveOptions="{ exact: true }"
     ></app-side-navbar-item>
   </div>
+  }
 </div>

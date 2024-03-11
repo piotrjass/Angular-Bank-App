@@ -1,29 +1,32 @@
 <div
-  class="flex flex-wrap w-[80%] mx-auto max-w-screen bg-gradient-to-r from-cyan-100 to-blue-100 rounded-3xl shadow-lg"
+  class="flex flex-wrap w-[80%] mx-auto max-w-screen bg-gradient-to-r from-cyan-100 to-blue-100 rounded-3xl shadow-lg p-10 gap-5 h-fit"
 >
   <div
     name="left"
-    class="w-[50%] flex flex-col items-center justify-center gap-5"
+    class="md:w-[50%] flex flex-col items-center justify-center gap-5 w-full"
   >
     <p
-      class="w-[50%] text-center text-5xl font-bold bg-clip-text drop-shadow-md"
+      class="w-[50%] text-center text-2xl md:text-3xl lg:text-5xl font-bold bg-clip-text drop-shadow-md"
     >
       Future of banking is here
     </p>
-    <p class="w-[50%] text-lg italic text-center">
+    <p class="w-full md:w-[50%] text-lg italic text-center">
       Experience seamless financial management with our intuitive banking app,
       offering advanced features like instant fund transfers and personalized
       budget tracking.
     </p>
     <button
-      class="w-[50%] text-xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 shadow-xl rounded-lg p-4 text-white hover:scale-105 transition-all duration-300"
+      class="md:w-[50%] w-full text-xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 shadow-xl rounded-lg p-4 text-white hover:scale-105 transition-all duration-300"
     >
       See free demo
     </button>
     <p class="text-sm italic text-gray-500">No credit card required</p>
   </div>
-  <div name="right image" class="w-[50%]">
-    <div class="w-[30rem] mx-auto p-10 flex">
+  <div
+    name="right image"
+    class="w-[40%] items-center justify-center hidden md:flex"
+  >
+    <div class="w-[20rem]">
       <img
         class="h-full w-full object-cover drop-shadow-xl rounded-3xl mx-auto"
         src="../../../../assets/images/landing-page-app.jpg"

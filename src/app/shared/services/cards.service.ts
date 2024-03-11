@@ -8,15 +8,11 @@ export class CardsService {
   url = 'http://localhost:8000/api/v1/card';
   id = '65e9fec9f3565afdbf22496d';
   async getCardsFromServer() {
-    console.log('starts');
     try {
       const res = await axios.get(`${this.url}/${this.id}`);
-      console.log(res.status);
-      console.log(res.data);
     } catch (error) {
       console.log(error);
     }
-    console.log('stop');
   }
 
   cards: any[] = [

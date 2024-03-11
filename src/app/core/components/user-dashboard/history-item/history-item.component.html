@@ -1,11 +1,13 @@
 <div
-  class="flex items-center justify-center gap-10 px-10 py-2 rounded-2xl w-[30rem] transition-all duration-300 hover:text-blue-700 cursor-pointer"
+  class="flex items-center justify-center gap-10 px-10 py-2 rounded-2xl lg:w-[30rem] w-[20rem] transition-all duration-300 hover:text-blue-700 cursor-pointer bg-cyan-50 mb-5"
 >
-  <p class="font-bold text-lg whitespace-nowrap">{{ person }}</p>
-  <p class="text-gray-700 whitespace-nowrap">{{ date }}</p>
-  <p class="font-bold text-lg whitespace-nowrap">{{ amount }} $</p>
+  <p class="font-bold lg:text-lg text-sm whitespace-nowrap">{{ person }}</p>
+  <p class="text-gray-700 text-sm lg:text-md whitespace-nowrap hidden lg:flex">
+    {{ date }}
+  </p>
+  <p class="font-bold lg:text-lg text-sm whitespace-nowrap">{{ amount }} $</p>
   <div
-    class="px-6 py-1 rounded-3xl font-bold text-md items-center flex justify-items-center w-[10rem]"
+    class="px-6 py-1 rounded-3xl font-bold text-md text-center w-fit lg:w-[10rem]"
     [ngClass]="{
       'bg-green-100 text-green-700': type === 'Income',
       'bg-red-100 text-red-700': type === 'Expense'
