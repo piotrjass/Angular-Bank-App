@@ -15,7 +15,7 @@ export class CardsService {
   responseData$: Observable<any> | undefined;
   async getCardsFromServer() {
     try {
-      this.responseData$ = this.http.get(this.url);
+      this.responseData$ = this.http.get(`${this.url}/card/${this.id}`);
     } catch (error) {
       console.error(error);
     }

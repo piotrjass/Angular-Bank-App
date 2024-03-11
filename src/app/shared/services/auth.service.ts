@@ -5,6 +5,7 @@ axios.defaults.withCredentials = true;
 //
 import { environment } from '../../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 //
 @Injectable({
@@ -12,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   constructor(private cookieService: CookieService) {}
-
+  responseData$: Observable<any> | undefined;
   url = environment.apiUrl;
 
   token: string = '';
