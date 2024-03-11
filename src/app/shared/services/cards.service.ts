@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
+//
+import { environment } from '../../../environments/environment.development';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+//
 @Injectable({
   providedIn: 'root',
 })
 export class CardsService {
-  constructor() {}
-  url = 'http://localhost:8000/api/v1/card';
+  url = environment.apiUrl;
+  constructor(private http: HttpClient) {}
   id = '65e9fec9f3565afdbf22496d';
+  responseData$: Observable<any> | undefined;
   async getCardsFromServer() {
     try {
-      const res = await axios.get(`${this.url}/${this.id}`);
+      this.responseData$ = this.http.get(this.url);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 

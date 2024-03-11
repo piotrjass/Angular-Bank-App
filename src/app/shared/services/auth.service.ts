@@ -1,10 +1,10 @@
 import { Injectable, signal } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { HttpClient } from '@angular/common/http';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 //
 import { environment } from '../../../environments/environment.development';
+import { HttpClient } from '@angular/common/http';
 
 //
 @Injectable({
@@ -17,8 +17,8 @@ export class AuthService {
 
   token: string = '';
   isAuthenticated = signal(false);
-  count = signal(1);
   isAuth: boolean = false;
+
   changeIsAuth() {
     this.isAuth != this.isAuth;
   }
